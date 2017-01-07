@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    var colors = ["black", "red", "maroon", "yellow", "lime", "aqua", "teal", "navy", "purple", "orange"].sort();
+    function do_game() {
+      var target_index = Math.floor(Math.random() * colors.length);
+      var target = colors[target_index];
+      var count = 1;
+      alert("Target: " + target);
+      var finished = false;
+      while (finished != true) {
+        var prompt_text = "I am thinking of one of these colors:\n\n" + colors.join(", ") + "\n\nWhat color am I thinking of?";
+        var guess_input = prompt(prompt_text);
+        guess_input = guess_input.toLowerCase();
+        finished = check_guess(guess_input, target, count);
+        count++;
+      }
+    }
+    function check_guess(guess_input, target, count) {
+      if (!find(guess_input, colors)) {
+        alert("I don't recognize that color!");
+        return false;
+      }
+      else if (guess_input > target) {
+        alert("Your input is alphabetically higher than mine!");
+        return false;
+      }
+      else if (guess_input < target) {
+        alert("Your input is alphabeticlaly lower than mine!");
+        return false;
+      }
+      else if (guess_input == target) {
+        body = document.getElementsByTagName("body")[0];
+        body.style.background = target;
+        alert("Congratulations! You have guessed the color!\n\nIt took you " + count + " guesses to finish the game!\n\nYou can see the colour in the background.");
+        return true;
+      }
+    }
+    function find(key, array) {
+      in_array = false;
+      for (var index = 0; index < array.length; index++) {
+        if (array[index] == key) {
+          in_array = true;
+        }
+      }
+      return in_array;
+    }
+  </script>
+</head>
+<body onload="do_game()">
+</body>
+</html>

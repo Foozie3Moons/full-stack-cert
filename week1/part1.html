@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name"assignment" content="Peer-graded Assignment: Dating Web Site Assessment">
+    <meta id="author" name="author"  content="Matthew Bell">
+  </head>
+  <body>
+    <h1>Please Enter Your Details</h1>
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post">
+      <!-- use method "get" to see the string queries -->
+      <fieldset>
+        <legend>Your Face</legend>
+        <label for="file">Your Image:</label>
+        <input type="file" required /><br />
+        <label for="preview">Image Preview:</label><img id="preview" /><img id="preview" />
+      </fieldset>
+      <fieldset>
+        <legend>Your General Details</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" /><br />
+        <label for="gender">Gender:</label>
+        <input type="radio" id="gender" name="gender" value="male" />Male
+        <input type="radio" id="gender" name="gender" value="female" />Female<br />
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required /><br />
+        <label for="date">Date of birth:</label>
+        <input type="date" id="date" name="date"  /><br />
+        <label for="fav">Favorite color:</label>
+        <input type="color" id="fav" name="fav"  /><br />
+        <label for="country">Which country:</label>
+        <select id="country" name="country" >
+          <option value="no-selection">
+            no selection
+          </option>
+          <option value="us">
+            United States
+          </option>
+          <option value="canada">
+            Canada
+          </option>
+          <option value="mexico">
+            Mexico
+          </option>
+          <option value="uk">
+            United Kingdom
+          </option>
+          <option value="france">
+            France
+          </option>>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Your indicators</legend>
+        <label for="range-h">Height:</label>Short
+        <input type="range" id="range-h" name="range-h" min="0" max="100" />Tall<br>
+        <label for="range-s">Salary:</label>Poor
+        <input type="range" id="range-s" name="range-s" min="0" max="100" />Rich
+      </fieldset>
+      <fieldset>
+        <legend>Your Contact Information</legend>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  /><br />
+        <label for="tel">Mobile:</label>
+        <input type="tel" id="tel" name="tel"  /><br />
+        <label for="address">Address:</label>
+        <textarea id="address" id="address" name="address" ></textarea><br />
+        <label for="checkbox">Method to contact you:</label>
+        <input type="checkbox" id="email" name="email"  />Email
+        <input type="checkbox" id="whatsapp" name="whatsapp"  />Whatsapp
+        <input type="checkbox" id="in-app-chat" name="in-app-chat" />In-app chat<br />
+      </fieldset>
+        <input type="submit" value="Submit!" />
+    </form>
+  </body>
+</html>
